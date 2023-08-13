@@ -10,7 +10,12 @@
 .if you want to add new task into the list you have to hit AddNewTask so you will get a dioluge then you can enter the data that you want to show into the tsak and if you have more than one list you can specify the list for example 
 
 ![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/2256ac62-6573-4574-99fc-36780b1613d0)
+
 .specify the list
 ![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/1516fdbe-56ed-420e-989f-403560d4a6e9)
 
 ![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/895afdef-cacb-4ab7-8706-e954be3d8e40)
+
+You can add subTask by using the new sub task button inside the dialuge but first you have to create a task then you can subtask 
+(manditory -> crate task button ----> AddNewSubTask) 
+![Screenshot 2023-08-13 225640](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/4cbd076b-215b-4b8a-9dc5-e406f76ae363)
