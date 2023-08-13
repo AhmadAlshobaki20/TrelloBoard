@@ -19,3 +19,7 @@
 You can add subTask by using the new sub task button inside the dialuge but first you have to create a task then you can subtask 
 (manditory -> crate task button ----> AddNewSubTask) 
 ![Screenshot 2023-08-13 225640](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/4cbd076b-215b-4b8a-9dc5-e406f76ae363)
+
+ 
+In this chart the percentge of list with it's own tasks you get access to this page by hit Markting inside the sideBar.   
+![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/b9e161a8-c6df-4441-a71e-ed18c862e178)
