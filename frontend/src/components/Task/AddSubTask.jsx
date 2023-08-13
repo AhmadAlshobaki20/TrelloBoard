@@ -4,7 +4,7 @@ import BoardContext from "../context/context";
 const AddSubTask = () => {
   const { subTask, setSubTask, createSubTask } = useContext(BoardContext);
   // create arrayOfSubTask to set it ti th local storage
-  const arrayOfSubTask = JSON.parse(localStorage.getItem("subtask")) || [];
+  // const arrayOfSubTask = JSON.parse(localStorage.getItem("subtask")) || [];
   // console.log(arrayOfSubTask);
   const handleSubTask = (event) => {
     const { name, value } = event.target;
@@ -12,13 +12,6 @@ const AddSubTask = () => {
       ...prevTask,
       [name]: value,
     }));
-  };
-
-  const getLength = () => {
-    let lengthOfSubTask = localStorage.getItem("lengthOfSubTask");
-    lengthOfSubTask = +lengthOfSubTask + 1;
-    lengthOfSubTask =  localStorage.setItem('lengthOfSubTask', lengthOfSubTask);
-    return lengthOfSubTask;
   };
   return (  
     <>
@@ -35,10 +28,9 @@ const AddSubTask = () => {
       <button
         id="Add-btn"
         onClick={() => {
-          arrayOfSubTask.push(subTask);
-          localStorage.setItem("subtask", JSON.stringify(arrayOfSubTask));
+          // arrayOfSubTask.push(subTask);
+          // localStorage.setItem("subtask", JSON.stringify(arrayOfSubTask));
           createSubTask();
-          getLength();
         }}
       >
         +Add New Subtask

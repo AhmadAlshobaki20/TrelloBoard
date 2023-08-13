@@ -9,7 +9,7 @@ import ShowTask from "./Task/ShowTask";
 import Task from "./Task/Task";
 import AddTaskModal from "./Task/AddTaskDialogue";
 import AddSubTask from "./Task/AddSubTask";
-import BarChart from './Market/StackedBarChart';
+import BarChart from "./Market/ListBarChart";
 export {
   Board,
   Nav,
@@ -21,5 +21,5 @@ export {
   Task,
   AddTaskModal,
   AddSubTask,
-  BarChart
+  BarChart,
 };

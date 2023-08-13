@@ -7,6 +7,7 @@ import BoardContext from "../context/context";
 const Task = ({ task }) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [completeTask, setCompleteTask] = useState(0);
   const [openEditField, setOpenEditField] = useState(false);
   const {
     deleteTask,
@@ -39,6 +40,10 @@ const Task = ({ task }) => {
   const filterSubTask = subTasks.filter((subTask) => {
     return subTask.taskId === task._id;
   });
+
+  const checksSubTask = (event) => {
+    console.log(event);
+  };
   // to set current task id to task_id inside the context
   useEffect(() => {
     setTaskId(task._id);
@@ -60,7 +65,7 @@ const Task = ({ task }) => {
             {task.title}
             <br />
             <span>
-              {task.subTask.length} of {filterSubTask.length}
+              {completeTask} of {filterSubTask.length} subtasks
             </span>
             <br />
           </h4>
@@ -112,12 +117,39 @@ const Task = ({ task }) => {
           >
             <p id="desc">{task.description}</p>
             <label>
-              Subtasks({} of {filterSubTask.length})
+              Subtasks({completeTask} of {filterSubTask.length})
             </label>
             {filterSubTask.map((subTask) => {
               return (
                 <div className="wrap-sub-task">
-                  <input type="checkbox" selected id="check1" />
+                  {!completeTask ? (
+                    <input
+                      type="checkbox"
+                      selected
+                      id="check1"
+                      onClick={(event) => {
+                        if (event.target.checked) {
+                          setCompleteTask(completeTask + 1);
+                        } else {
+                          setCompleteTask(completeTask - 1);
+                        }
+                      }}
+                    />
+                  ) : (
+                    <input 
+                      type="checkbox"
+                      checked
+                      id="check1"
+                      onClick={(event) => {
+                        if (event.target.checked) {
+                          setCompleteTask(completeTask + 1);
+                        } else {
+                          setCompleteTask(completeTask - 1);
+                        }
+                      }}
+                    />
+                  )}
+
                   <label for="check1">{subTask.title}</label>
                 </div>
               );

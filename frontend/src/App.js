@@ -1,6 +1,6 @@
 import { Nav, SideBar, AddList } from "./components/intermediary";
 import "./App.css";
-import StackedBarChart from "./components/Market/StackedBarChart.jsx";
+import StackedBarChart from "./components/Market/ListBarChart.jsx";
 import { Route, Routes } from "react-router-dom";
 function App() {
   return (
@@ -10,8 +10,8 @@ function App() {
         <SideBar />
         <div className="lists">
           <Routes>
-          <Route path="/" element={<AddList />}/>
-          <Route path="/market" element={<StackedBarChart/>}/>
+            <Route path="/" element={<AddList />} />
+            <Route path="/market" element={<StackedBarChart />} />
           </Routes>
         </div>
       </div>

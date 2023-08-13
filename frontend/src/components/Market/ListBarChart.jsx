@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext} from "react";
 import { Bar } from "react-chartjs-2";
-import "./StackedBarChart.css";
+import "./ListBarChart.css";
 
 import BoardContext from "../context/context";
 import {

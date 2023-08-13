@@ -36,8 +36,6 @@ function Provider({ children }) {
 
   const [newTitle, setNewTitle] = useState("");
 
-  // length subTask
-  const [lengthSubTask, setLengthSubTask] = useState(0);
 
   // get current list id
   const getCurrentListId = (id) => {
@@ -184,8 +182,6 @@ function Provider({ children }) {
     setTaskId,
     updateTask,
     setNewTitle,
-    lengthSubTask,
-    setLengthSubTask,
   };
 
   return (
