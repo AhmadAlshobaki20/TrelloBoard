@@ -1,0 +1,25 @@
+.wrap-list {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: 250px;
+  border-radius: 12px;
+  /* background: #373745; */
+}
+.wrap-list span {
+  color: var(--font-color);
+  font-family: var(--font-family);
+  font-size: small;
+}
+#description {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin-left: 16px;
+}
+#circle {
+  border-radius: 50%;
+  /* background: #63c0d8; */
+  width: 15px;
+  height: 15px;
+}

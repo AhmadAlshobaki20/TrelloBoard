@@ -1,0 +1,35 @@
+.side-bar {
+  background: var(--main-color);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 70px 20px;
+  width: 220px;
+  height: 100vh;
+  gap: 20px;
+  grid-column: 1/2;
+  grid-row: 1/-1;
+  border-right: 2px solid rgb(79, 79, 79);
+}
+.side-bar div {
+  width: 100%;
+  margin-left: -20px;
+  padding: 10px 0 10px 20px;
+  border-radius: 0 20px 20px 0;
+  font-family: var(--font-family);
+  font-size: small;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.side-bar div:hover {
+  background: var(--btn-color);
+  color: white;
+  width: 200px;
+}
+
+/* #side-bar-list-item{
+  display: flex;
+  flex-direction: column;
+} */

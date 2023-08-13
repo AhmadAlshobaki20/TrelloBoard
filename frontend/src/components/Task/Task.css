@@ -1,0 +1,52 @@
+#task-wrap {
+  display: flex;
+  position: relative;
+}
+
+#task {
+  background: var(--main-color);
+  width: 250px;
+  padding: 20px;
+  height: 90px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 20px;
+}
+
+#task h4 {
+  color: white;
+  font-family: var(--font-family);
+  font-size: small;
+}
+
+#task h4 span {
+  color: gray;
+  font-family: var(--font-family);
+  font-size: x-small;
+}
+
+.task-delete {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+}
+
+#inner-modal {
+  width: 500px;
+  background: #2c2c38 !important;
+  margin: auto auto;
+  color: #fdfdfd;
+  height: 470px;
+  font-family: Poppins;
+  font-size: 12px;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* @media only screen and (max-width: 1200px) {
+  #task {
+    width: 80vw;
+  }
+} */

@@ -1,0 +1,68 @@
+/* The Modal (background) */
+.modal {
+  background-color: rgb(0, 0, 0); /*Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  height: 100%; /* Full height */
+  left: 0;
+  top: 0;
+  overflow: auto; /* Enable scroll if needed */
+  position: fixed; /* Stay in place */
+  padding-top: 100px; /* Location of the box */
+  z-index: 1; /* Sit on top */
+  width: 100%; /* Full width */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Add_Modal_pop_up {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap-sub-task {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  background: #21212d;
+  padding: 15px;
+  gap: 5px;
+}
+
+select {
+  border-radius: 4px;
+  background: #2b2b38;
+  border: 1px solid #585858;
+  color: rgb(151, 151, 151);
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+  padding: 5px;
+}
+option {
+  color: rgb(158, 158, 158);
+  font-size: 12px;
+}
+#description-field {
+  display: flex;
+  height: 120px;
+  resize: none;
+}
+
+#desc {
+  width: 100%;
+  word-break: break-all;
+  color:#8a8c94;
+}

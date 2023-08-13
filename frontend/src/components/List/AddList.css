@@ -1,0 +1,49 @@
+#add-list {
+  background: #373745;
+  color: black;
+  opacity: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  padding: 60px;
+  height: auto;
+  color: white;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+#inner-add-task {
+  margin-top: 50px;
+  transition: all 400ms ease;
+  padding: 5px;
+  height: fit-content;
+  background: #353543;
+  /* border-radius: 6px; */
+}
+#inner-add-task input {
+  height: 40px;
+  border-radius: 6px;
+  outline: none;
+  padding: 5px;
+}
+#inner-add-task button {
+  background: #625ecc;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 8px;
+  border: none;
+  margin-right: 5px;
+}
+#inner-add-task button:hover{
+  background: #7673cd;
+}
+.fa-solid {
+  color: white;
+  margin:5px 0 5px;
+}
+.fa-solid:hover {
+  color: rgb(212, 212, 212);
+}

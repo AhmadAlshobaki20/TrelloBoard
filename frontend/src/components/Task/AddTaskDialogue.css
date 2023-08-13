@@ -1,0 +1,103 @@
+/* The Modal (background) */
+#Modal{
+  width: 400px;
+  background: #2c2c38 !important;
+  margin: auto auto;
+  color: #fdfdfd;
+  height: 600px;
+  font-family: Poppins;
+  font-size: 12px;
+  padding: 30px;
+  border-radius: 12px;
+}
+.modal {
+  background-color: rgb(0, 0, 0); /*Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  height: 100%; /* Full height */
+  left: 0;
+  top: 0;
+  overflow: auto; /* Enable scroll if needed */
+  position: fixed; /* Stay in place */
+  padding-top: 100px; /* Location of the box */
+  z-index: 1; /* Sit on top */
+  width: 100%; /* Full width */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+.Add_Modal_pop_up {
+  display: flex;
+  flex-direction: column;
+}
+
+.fields,
+select {
+  border-radius: 4px;
+  background: #2b2b38;
+  border: 1px solid #585858;
+  color: rgb(151, 151, 151);
+  font-size: 12px;
+  height: 30px;
+  outline: none;
+  padding: 5px;
+}
+option{
+  color:rgb(158, 158, 158);
+  font-size: 12px;
+}
+#description-field {
+  display: flex;
+  height: 120px;
+  resize: none;
+}
+#Add-btn {
+  background: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 10px;
+}
+#Add-btn:hover{
+  background: rgb(226, 226, 226);
+}
+#create-btn {
+  background: #645fc6;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 10px;
+}
+#create-btn:hover{
+  background: #7872e9;
+}
+.wrap-subTask {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;     
+}
+.wrap-subTask input{
+  width: 100%;
+}
+.wrap-subTask i{
+  color: #838796;
+}

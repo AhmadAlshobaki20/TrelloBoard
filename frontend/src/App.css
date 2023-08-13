@@ -1,0 +1,40 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, auto);
+}
+.lists {
+  display: flex;
+  width: 80vw;
+  overflow: auto;
+  margin-left: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius:12px ;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a1a0a0;
+  border-radius:12px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* @media only screen and (max-width: 1200px) {
+  .lists {
+    flex-direction: column;
+  }
+} */
+
