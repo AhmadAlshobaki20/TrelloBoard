@@ -1,4 +1,3 @@
-![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/0ac0f0df-17f3-4037-8820-265f0693fb42)# TrelloBoard
 
 Here the main page of project 
 
