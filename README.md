@@ -1,10 +1,8 @@
 
 .Here the main page of project 
 
-![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/8436ae04-b8cb-47cc-8ce1-509a0b3ed63a)
-
 .if you want to create new list you have to hit new Column for example:
-
+![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/8436ae04-b8cb-47cc-8ce1-509a0b3ed63a)
 ![image](https://github.com/AhmadAlshobaki20/TrelloBoard/assets/127348872/baeed5ac-28c2-4265-b1a0-36e96acf8292)
 
 .if you want to add new task into the list you have to hit AddNewTask so you will get a dioluge then you can enter the data that you want to show into the tsak and if you have more than one list you can specify the list for example 
