@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // mounting process
-app.use("/api/v1/tasks", taskRouter);
 app.use("/api/v1/lists", listRouter);
+app.use("/api/v1/tasks", taskRouter);
 app.use("/api/v1/subtask", subtaskRouter);
 
 module.exports = app;

@@ -11,10 +11,12 @@ router
 router
   .route("/:id")
   .get(taskController.getTask)
-  .patch()
+  .patch(taskController.updateTask)
   .delete(taskController.deleteTask);
 
-router.route("/:taskId/subtask").post(subTaskController.createSubTask);
-router.route("/:taskId/subtask").get(subTaskController.getAllSubtask);
+router
+  .route("/:taskId/subtask")
+  .post(subTaskController.createSubTask)
+  .get(subTaskController.getAllSubtask);
 
 module.exports = router;

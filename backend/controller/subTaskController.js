@@ -1,14 +1,17 @@
 const subTask = require("./../model/subTask");
-
+const Task = require('./../model/taskModel');
 // create subtask
 exports.createSubTask = async (req, res) => {
   try {
     const taskId = req.params.taskId;
     const newSubTask = await subTask.create({
       title: req.body.title,
-      status: req.body.status,
+      // status: req.body.status,
       taskId: taskId,
     });
+    const updateSubTask = await Task.findById(taskId);
+    updateSubTask.subTask.push(newSubTask._id);
+    updateSubTask.save();
     res.status(201).json({
       status: "success",
       data: {

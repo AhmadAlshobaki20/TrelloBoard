@@ -29,6 +29,14 @@
   width: 200px;
 }
 
+.links{
+  color: var(--font-color);
+  text-decoration: none;
+}
+.links:hover{
+  color: white;
+} 
+
 /* #side-bar-list-item{
   display: flex;
   flex-direction: column;

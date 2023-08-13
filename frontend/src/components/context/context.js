@@ -34,6 +34,11 @@ function Provider({ children }) {
   // current task Id
   const [task_id, setTaskId] = useState("");
 
+  const [newTitle, setNewTitle] = useState("");
+
+  // length subTask
+  const [lengthSubTask, setLengthSubTask] = useState(0);
+
   // get current list id
   const getCurrentListId = (id) => {
     const listId = Lists.find((list) => {
@@ -46,6 +51,7 @@ function Provider({ children }) {
   useEffect(() => {
     getAllList();
     getTasks();
+    getAllSubTask();
   }, []);
 
   // get All lists from dataBase
@@ -100,15 +106,31 @@ function Provider({ children }) {
   };
   // delete task
   const deleteTask = async (taskId) => {
-    const updateTask = Tasks.filter((task) => {
+    const delTask = Tasks.filter((task) => {
       return task._id !== taskId;
     });
-    setTasks(updateTask);
+    setTasks(delTask);
     // delete task from dataBase
     await axios.delete(`api/v1/tasks/${taskId}`);
     console.log("success delete process");
   };
-  // -----------------------------------------------------------subTask-------------------------------------------------------------------------
+
+  const updateTask = async (taskId) => {
+    const updateTask = Tasks.map((task) => {
+      if (taskId === task.id) {
+        return { ...task, title: newTitle };
+      }
+      return task;
+    });
+    setTasks(updateTask);
+    const response = await axios.patch(`api/v1/tasks/${taskId}`, {
+      title: newTitle,
+    });
+    setTaskContent({});
+    console.log(response);
+  };
+
+  //-----------------------------------------------------------subTask-------------------------------------------------------------------------
 
   const createSubTask = async () => {
     try {
@@ -126,22 +148,19 @@ function Provider({ children }) {
       console.log(err);
     }
   };
-
-  useEffect(() => {
-    subTASKSS();
-  }, []);
-  const subTASKSS = async () => {
+  const getAllSubTask = async () => {
     try {
-      const response = await axios.get("api/v1/subtask");
-      setSubTasks(response.data.data.subTasks);
-      console.log(response.data.data.subTasks)
+      if (subTasks){
+        const response = await axios.get("api/v1/subtask");
+        setSubTasks(response.data.data.subTasks);
+        console.log(response.data.data.subTasks);
+      }
     } catch (err) {
       console.log(err);
     }
   };
-  
+
   const valueToShare = {
-    subTASKSS,
     Lists,
     Tasks,
     getAllList,
@@ -160,9 +179,13 @@ function Provider({ children }) {
     subTasks,
     setSubTasks,
     createSubTask,
-    // getAllSubTask,
+    getAllSubTask,
     task_id,
     setTaskId,
+    updateTask,
+    setNewTitle,
+    lengthSubTask,
+    setLengthSubTask,
   };
 
   return (

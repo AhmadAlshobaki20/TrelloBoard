@@ -6,8 +6,8 @@ const subTaskSchema = new mongoose.Schema({
     required: [true, "subtask must have an title🗒️"],
   },
   status: {
-    type: String,
-    // required: [true, "subtask must have an status"], //completed , notComplete
+    type: Boolean,
+    default:false
   },
   taskId: {
     type: mongoose.Schema.ObjectId,

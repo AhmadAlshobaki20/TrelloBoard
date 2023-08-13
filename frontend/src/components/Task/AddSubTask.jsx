@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import BoardContext from "../context/context";
 
 const AddSubTask = () => {
-  const { subTasks, setSubTasks, subTask, setSubTask, createSubTask,Tasks } =
-    useContext(BoardContext);
-
+  const { subTask, setSubTask, createSubTask } = useContext(BoardContext);
+  // create arrayOfSubTask to set it ti th local storage
+  const arrayOfSubTask = JSON.parse(localStorage.getItem("subtask")) || [];
+  // console.log(arrayOfSubTask);
   const handleSubTask = (event) => {
     const { name, value } = event.target;
     setSubTask((prevTask) => ({
@@ -13,13 +14,13 @@ const AddSubTask = () => {
     }));
   };
 
-  // const getCurenttaskId = ()=>{
-  //   const task = Tasks.find((ele)=>{
-  //     return ele.taskId === 
-  //   })
-  // }
-
-  return (
+  const getLength = () => {
+    let lengthOfSubTask = localStorage.getItem("lengthOfSubTask");
+    lengthOfSubTask = +lengthOfSubTask + 1;
+    lengthOfSubTask =  localStorage.setItem('lengthOfSubTask', lengthOfSubTask);
+    return lengthOfSubTask;
+  };
+  return (  
     <>
       <div className="wrap-subTask">
         <input
@@ -34,7 +35,10 @@ const AddSubTask = () => {
       <button
         id="Add-btn"
         onClick={() => {
+          arrayOfSubTask.push(subTask);
+          localStorage.setItem("subtask", JSON.stringify(arrayOfSubTask));
           createSubTask();
+          getLength();
         }}
       >
         +Add New Subtask
