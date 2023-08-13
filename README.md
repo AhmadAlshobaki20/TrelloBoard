@@ -1,4 +1,4 @@
-
+npm install -> to install dependinces
 .Here the main page of project 
 
 .if you want to create new list you have to hit new Column for example:
