@@ -2,16 +2,20 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, auto);
-}
+  /* overflow-y: scroll; */
+} 
 .lists {
   display: flex;
-  width: 80vw;
-  overflow: auto;
+  width: 100%;  
+  overflow: scroll;     
   margin-left: 10px;
+  height: 89vh;
+  grid-column: 2/-1;
+  grid-row: 2/-1;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
   height: 5px;
 }
 

@@ -36,7 +36,6 @@ function Provider({ children }) {
 
   const [newTitle, setNewTitle] = useState("");
 
-
   // get current list id
   const getCurrentListId = (id) => {
     const listId = Lists.find((list) => {
@@ -65,7 +64,6 @@ function Provider({ children }) {
   const createList = async () => {
     try {
       const response = await axios.post("api/v1/lists", listContent);
-      // console.log(response);
       setLists([...Lists, response.data["newList"]]);
     } catch (err) {
       console.log(err);
@@ -80,13 +78,13 @@ function Provider({ children }) {
         `api/v1/lists/${list_id}/tasks`,
         taskContent
       );
-      console.log(response.data);
-      // console.log("success create task");
+      getAllList();
       setTasks([...Tasks, response.data["Task"]]);
     } catch (err) {
       console.log(err);
     }
   };
+
 
   // get All task
   const getTasks = async () => {
@@ -98,11 +96,7 @@ function Provider({ children }) {
     }
   };
 
-  const addTask = (title, description, status) => {
-    const updateTask = [...Tasks, { title, description, status }];
-    setTasks(updateTask);
-  };
-  // delete task
+
   const deleteTask = async (taskId) => {
     const delTask = Tasks.filter((task) => {
       return task._id !== taskId;
@@ -113,9 +107,11 @@ function Provider({ children }) {
     console.log("success delete process");
   };
 
+
+
   const updateTask = async (taskId) => {
     const updateTask = Tasks.map((task) => {
-      if (taskId === task.id) {
+      if (task.id === taskId) {
         return { ...task, title: newTitle };
       }
       return task;
@@ -148,7 +144,7 @@ function Provider({ children }) {
   };
   const getAllSubTask = async () => {
     try {
-      if (subTasks){
+      if (subTasks) {
         const response = await axios.get("api/v1/subtask");
         setSubTasks(response.data.data.subTasks);
         console.log(response.data.data.subTasks);
@@ -165,7 +161,6 @@ function Provider({ children }) {
     setListContent,
     listContent,
     createList,
-    addTask,
     taskContent,
     setTaskContent,
     createTask,
@@ -194,10 +189,3 @@ function Provider({ children }) {
 export { Provider };
 export default BoardContext;
 
-//List Current ID
-// const [listId, setListId] = useState("");
-
-// const handleListId = (event)=>{
-//   setListId(event.target.value)
-//   console.log(listId)
-// }

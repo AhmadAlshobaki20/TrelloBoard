@@ -18,7 +18,7 @@ const AddTaskModal = () => {
     Lists,
     getTasks,
     getCurrentListId,
-    createSubTask
+    getAllList
   } = useContext(BoardContext);
 
   // create function to handle form
@@ -99,7 +99,7 @@ const AddTaskModal = () => {
               id="create-btn"
               onClick={() => {
                 createTask();
-                // createSubTask()
+                getAllList()
               }}
             >
               Crate Task

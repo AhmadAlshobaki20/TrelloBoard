@@ -17,6 +17,7 @@ const Task = ({ task }) => {
     setNewTitle,
     getTasks,
     Lists,
+    setSubTasks,
   } = useContext(BoardContext);
 
   const openModal = () => {
@@ -40,14 +41,19 @@ const Task = ({ task }) => {
   const filterSubTask = subTasks.filter((subTask) => {
     return subTask.taskId === task._id;
   });
-
-  const checksSubTask = (event) => {
-    console.log(event);
+// to handle checkBox
+  const handleCheckboxChange = (taskId) => {
+    const updatedSubTasks = subTasks.map((task) => {
+      if (task._id === taskId) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    });
+    setSubTasks(updatedSubTasks);
   };
   // to set current task id to task_id inside the context
   useEffect(() => {
     setTaskId(task._id);
-    localStorage.setItem("lengthOfSubTask", task.subTask.length);
     getTasks();
   }, []);
 
@@ -120,14 +126,15 @@ const Task = ({ task }) => {
               Subtasks({completeTask} of {filterSubTask.length})
             </label>
             {filterSubTask.map((subTask) => {
+              console.log(subTask)
               return (
-                <div className="wrap-sub-task">
-                  {!completeTask ? (
+                <div key={subTask._id} className="wrap-sub-task">
+                  {!subTask.complete ? (
                     <input
                       type="checkbox"
-                      selected
-                      id="check1"
-                      onClick={(event) => {
+                      checked={task.completed}
+                      onChange={() => handleCheckboxChange(task._id)}
+                      onClick={(event) => { 
                         if (event.target.checked) {
                           setCompleteTask(completeTask + 1);
                         } else {
@@ -136,10 +143,8 @@ const Task = ({ task }) => {
                       }}
                     />
                   ) : (
-                    <input 
+                    <input
                       type="checkbox"
-                      checked
-                      id="check1"
                       onClick={(event) => {
                         if (event.target.checked) {
                           setCompleteTask(completeTask + 1);
@@ -149,8 +154,7 @@ const Task = ({ task }) => {
                       }}
                     />
                   )}
-
-                  <label for="check1">{subTask.title}</label>
+                  <label>{subTask.title}</label>
                 </div>
               );
             })}

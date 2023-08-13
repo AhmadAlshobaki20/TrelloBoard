@@ -4,7 +4,6 @@ const SideBar = () => {
   return (
     <>
       <aside className="side-bar">
-        {/* <div id='side-bar-list-item'> */}
         <span>all Borders(8)</span>
         <div className="sidebar-item">
           <i className="fa-brands fa-windows" style={{ color: "#ededed;" }}></i>
@@ -22,7 +21,6 @@ const SideBar = () => {
           <i className="fa-brands fa-windows" style={{ color: "#ededed;" }}></i>
           <span>+Create New Board</span>
         </div>
-        {/* </div> */}
       </aside>
     </>
   );
