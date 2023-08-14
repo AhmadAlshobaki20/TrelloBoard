@@ -29,14 +29,20 @@
   width: 200px;
 }
 
-.links{
+.links {
   color: var(--font-color);
   text-decoration: none;
 }
-.links:hover{
+.links:hover {
   color: white;
-} 
+}
 
+#crate {
+  color: #8b88d3;
+}
+#crate i {
+  color: #8b88d3;
+}
 /* #side-bar-list-item{
   display: flex;
   flex-direction: column;

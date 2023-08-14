@@ -8,7 +8,7 @@
   justify-content: center;
   border-radius: 2px;
   padding: 60px;
-  height: auto;
+  height: 200px;
   color: white;
   margin-top: 50px;
   cursor: pointer;
@@ -37,12 +37,12 @@
   border: none;
   margin-right: 5px;
 }
-#inner-add-task button:hover{
+#inner-add-task button:hover {
   background: #7673cd;
 }
 .fa-solid {
   color: white;
-  margin:5px 0 5px;
+  margin: 5px 0 5px;
 }
 .fa-solid:hover {
   color: rgb(212, 212, 212);

@@ -120,7 +120,7 @@ function Provider({ children }) {
     const response = await axios.patch(`api/v1/tasks/${taskId}`, {
       title: newTitle,
     });
-    setTaskContent({});
+    getTasks();
     console.log(response);
   };
 
